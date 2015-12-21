@@ -53,6 +53,7 @@ class Voice(object):
     speech_rate = None
     sentence_break = None
     paragraph_break = None
+    language = None
     _codec = "ogg"
     region_options = {
         'us-east': 'us-east-1',
@@ -163,7 +164,8 @@ class Voice(object):
                 'ParagraphBreak': self.paragraph_break
             },
             'Voice': {
-                'Name': self.voice_name
+                'Name': self.voice_name,
+                'Language':self.language
             }
         })
 
@@ -241,6 +243,7 @@ class Voice(object):
         """
         self.region = 'us-east'
         self.voice_name = 'Brian'
+        self.language = 'en-US'
         self.access_key = access_key
         self.secret_key = secret_key
         self.speech_rate = 'medium'
